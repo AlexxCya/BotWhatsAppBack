@@ -13,6 +13,7 @@ namespace BotWhatsApp.Entities
         public string Asesor { get; set; }
         public long EmpresaId { get; set; }
         public bool Cerrada { get; set; }
+        public int RolId { get; set; }
         public List<Conversaciones> Conversaciones { get; set; }
 
     }

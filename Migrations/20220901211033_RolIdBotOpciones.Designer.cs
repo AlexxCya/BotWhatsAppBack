@@ -4,14 +4,16 @@ using BotWhatsApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BotWhatsApp.Migrations
 {
     [DbContext(typeof(BotWhatsAppContext))]
-    partial class BotWhatsAppContextModelSnapshot : ModelSnapshot
+    [Migration("20220901211033_RolIdBotOpciones")]
+    partial class RolIdBotOpciones
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,9 +53,6 @@ namespace BotWhatsApp.Migrations
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("RolId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("Visto")
                         .HasColumnType("bit");

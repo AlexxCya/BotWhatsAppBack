@@ -36,7 +36,7 @@ namespace BotWhatsApp.Controllers
         public async Task<IActionResult> Post(BandejaDTO bandeja)
         {
             await _bandejaService.CerrarBandeja(bandeja.Id);
-            _conversacionesService.GetChat(bandeja.Destinatario);
+            _conversacionesService.GetChat(bandeja.Destinatario, bandeja.RolId);
             var msg = _mensajePredetService.GetByNombre("Fin de Conversacion").Mensaje;
             SendMessage.SendMultimedia(bandeja.Destinatario, msg, string.Empty);
             return Ok();

@@ -26,6 +26,7 @@ namespace BotWhatsApp.Entities
         public long EmpresaId { get; set; }
         [StringLength(30)]
         public string TipoRetorno { get; set; }
+        public int RolId { get; set; }
         public List<Bots> Bots { get; set; }
     }
 }

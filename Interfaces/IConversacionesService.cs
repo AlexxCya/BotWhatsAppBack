@@ -10,8 +10,8 @@ namespace BotWhatsApp.Interfaces
     {
         IEnumerable GetConversacionesByDestinatario(string Destinatario);
         Task InsertConversaciones(ConversacionesDTO conersacionesDTO, string uri);
-        Chat GetChat(string Destinatario);
-        List<Chat> GetChats(string Destinatario);
-        Chat GetChatByDestinatario(string Destinatario);
+        Chat GetChat(string Destinatario, int RolId);
+        List<Chat> GetChats(string Destinatario, int RolId);
+        Chat GetChatByDestinatario(string Destinatario, int RolId);
     }
 }

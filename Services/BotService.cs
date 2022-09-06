@@ -79,6 +79,7 @@ namespace BotWhatsApp.Services
             var _lst = _unitOfWork.BotsRepository.Find(expression);
             Bots bots = new Bots();
             string retorno = string.Empty;
+            int rolId = 1;
 
             if (_lst.Count() == 1)
             {
@@ -86,6 +87,7 @@ namespace BotWhatsApp.Services
 
                 var botOpc = await _botOpcionesService.GetById(bots.BotOpcionesId);
                 retorno = botOpc.TipoRetorno;
+                rolId = botOpc.RolId;
                 
             }
             else
@@ -98,6 +100,7 @@ namespace BotWhatsApp.Services
                     {
                         bots = bot;
                         retorno = botOpc.TipoRetorno;
+                        rolId = botOpc.RolId;
                     }
 
                 }
@@ -114,6 +117,7 @@ namespace BotWhatsApp.Services
                 botDTO.ValoresApi = bots.ValoresApi;
                 botDTO.BotOpcionesId = bots.BotOpcionesId;
                 botDTO.TipoRetorno = retorno;
+                botDTO.RolId = rolId;
 
                 return botDTO;
 

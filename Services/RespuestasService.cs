@@ -193,6 +193,7 @@ namespace BotWhatsApp.Services
             long empresaId = 0;
             empresaId = _empresaService.GetEmpresaByWhatsApp(empresaWhatsApp);
 
+            var _idActivo = await _botService.BotActive(destinatario, empresaId);
             var _bandeja = _bandejaService.GetBandejaAbiertaPorDestinatario(destinatario, empresaId);
 
 
@@ -207,6 +208,9 @@ namespace BotWhatsApp.Services
                     newBandeja.Visto = false;
                     newBandeja.Asesor = "Yo";
                     newBandeja.EmpresaId = empresaId;
+
+                    if(_idActivo != null)
+                        newBandeja.RolId = _idActivo.RolId;
 
                     await _bandejaService.InsertBandeja(newBandeja);
 
@@ -224,6 +228,7 @@ namespace BotWhatsApp.Services
                 newItem.Destinatario = destinatario;
                 newItem.Mensaje = pregunta;
                 newItem.Tipo = "Cliente";
+                newItem.RolId = _idActivo.RolId;
                 if (_bandeja != null)
                     newItem.BandejaId = _bandeja.Id;
                 else
@@ -240,7 +245,6 @@ namespace BotWhatsApp.Services
             }
             else
             {
-                var _idActivo = await _botService.BotActive(destinatario, empresaId);
                 var retorno = _idActivo.TipoRetorno;
                 if (preguntaOpcion.ToLower().Equals("menu") || preguntaOpcion.ToLower().Equals("hola") || _idActivo == null)
                 {

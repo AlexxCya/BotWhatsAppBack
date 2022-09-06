@@ -14,5 +14,7 @@
         public string OpcionesMsjApi { get; set; }
         public string OpcionesApi { get; set; }
         public string TipoRetorno { get; set; }
+        public int RolId { get; set; }
+
     }
 }

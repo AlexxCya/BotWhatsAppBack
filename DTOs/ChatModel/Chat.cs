@@ -13,5 +13,6 @@ namespace BotWhatsApp.DTOs.ChatModel
         public List<Message> messages { get; set; }
         public bool muted { get; set; }
         public int unreadCount { get; set; }
+        public int rolId { get; set; }
     }
 }

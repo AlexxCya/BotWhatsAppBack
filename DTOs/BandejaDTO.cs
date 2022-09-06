@@ -7,5 +7,6 @@
         public bool Visto { get; set; }
         public string Asesor { get; set; }
         public bool Cerrada { get; set; }
+        public int RolId { get; set; }
     }
 }

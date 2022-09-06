@@ -4,14 +4,16 @@ using BotWhatsApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BotWhatsApp.Migrations
 {
     [DbContext(typeof(BotWhatsAppContext))]
-    partial class BotWhatsAppContextModelSnapshot : ModelSnapshot
+    [Migration("20220901211229_RolIdBandeja")]
+    partial class RolIdBandeja
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

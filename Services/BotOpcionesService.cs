@@ -48,6 +48,7 @@ namespace BotWhatsApp.Services
                 itemDTO.OpcionesMsjApi = item.OpcionesMsjApi;
                 itemDTO.JsonParametros = item.JsonParametros;
                 itemDTO.TipoRetorno = item.TipoRetorno;
+                itemDTO.RolId = item.RolId;
 
                 dTOLst.Add(itemDTO);
             }
@@ -76,6 +77,7 @@ namespace BotWhatsApp.Services
                 itemDTO.OpcionesMsjApi = item.OpcionesMsjApi;
                 itemDTO.JsonParametros = item.JsonParametros;
                 itemDTO.TipoRetorno = item.TipoRetorno;
+                itemDTO.RolId = item.RolId;
 
                 dTOLst.Add(itemDTO);
             }
@@ -127,6 +129,7 @@ namespace BotWhatsApp.Services
             newItem.IdPadre = botOpcion.IdPadre;
             newItem.EmpresaId = 1;
             newItem.TipoRetorno = botOpcion.TipoRetorno;
+            newItem.RolId = botOpcion.RolId;
             if(botOpcion.ConApi)
             {
                 newItem.UrlApi = botOpcion.UrlApi;
@@ -151,6 +154,7 @@ namespace BotWhatsApp.Services
             _item.TipoRetorno = botOpcion.TipoRetorno;
             _item.ActualizadoPor = "User";
             _item.FechaActualizaion = DateTime.Now;
+            _item.RolId = botOpcion.RolId;
             if (botOpcion.ConApi)
             {
                 _item.UrlApi = botOpcion.UrlApi;

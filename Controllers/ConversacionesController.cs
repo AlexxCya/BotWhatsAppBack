@@ -40,16 +40,16 @@ namespace BotWhatsApp.Controllers
 
         //}
         [HttpGet("chat")]
-        public IActionResult GetChats()
+        public IActionResult GetChats(int RolId)
         {
-            var result = _conversacionesService.GetChats("");
+            var result = _conversacionesService.GetChats("", RolId);
             return Ok(result);
         }
         [HttpGet("chatById")]
-        public IActionResult GetChatById(string id)
+        public IActionResult GetChatById(string id, int RolId)
         { 
             var destinatario = id.Split('-')[1];
-            var result = _conversacionesService.GetChatByDestinatario(destinatario);
+            var result = _conversacionesService.GetChatByDestinatario(destinatario, RolId);
             return Ok(result);
         }
         [HttpPost]

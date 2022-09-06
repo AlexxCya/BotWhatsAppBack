@@ -25,9 +25,9 @@ namespace BotWhatsApp.Services
             return _unitOfWork.BandejaRepository.Find(expression);
         }
 
-        public BandejaDTO GetBandejaPorDestinatario(string Destinatario, long EmpresaId)
+        public BandejaDTO GetBandejaPorDestinatario(string Destinatario, long EmpresaId, int RolId)
         {
-            Expression<Func<Bandeja, bool>> expression = x => x.Destinatario == Destinatario && x.EmpresaId == EmpresaId;
+            Expression<Func<Bandeja, bool>> expression = x => x.Destinatario == Destinatario && x.EmpresaId == EmpresaId && x.RolId == RolId;
             BandejaDTO dTO = new BandejaDTO();
 
             var _item = _unitOfWork.BandejaRepository.Find(expression).LastOrDefault();
