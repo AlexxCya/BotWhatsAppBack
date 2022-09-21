@@ -59,10 +59,10 @@ namespace BotWhatsApp
 
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BotWhatsApp", Version = "v1" });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "BotWhatsApp", Version = "v1" });
+            //});
             //services.AddDbContext<BotWhatsAppContext>(options =>
             //     options.UseInMemoryDatabase(databaseName: "InMemoryDB")
             //    );
@@ -91,8 +91,8 @@ namespace BotWhatsApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BotWhatsApp v1"));
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BotWhatsApp v1"));
             }
 
             app.UseHttpsRedirection();
